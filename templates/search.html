@@ -1,8 +1,10 @@
 {% extends "layout.html" %}
-{% block title %}Search Wikipedia{% endblock %}
+{% block title %}Search{% endblock %}
 {% block content %}
-<form method="post" action="">
-    <p><label>Search: <input type="text" id="search" name="search"></label></p>
-    <p><input type="submit" id="submit" value="Search"></p>
-</form>
+    <h1>Search Wikipedia</h1>
+    <form method="POST" action="{{ url_for('search') }}">
+        <label for="search">Search Term:</label>
+        <input type="text" id="search" name="search" required>
+        <button type="submit">Search</button>
+    </form>
 {% endblock %}
